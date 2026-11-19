@@ -93,7 +93,8 @@ st.markdown(
         padding-bottom: 3rem;
     }}
 
-    [data-testid="stHeaderActionElements"] {{
+    [data-testid="stToolbarActions"],
+    .stAppToolbar [data-testid="stActionButton"] {{
         display: none !important;
     }}
 
