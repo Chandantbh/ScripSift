@@ -1,0 +1,88 @@
+{
+  "best_model": "Naive Bayes CountVectorizer",
+  "selected_model": "Naive Bayes CountVectorizer",
+  "split_strategy": "Two-stage StratifiedGroupKFold: approximately 20% grouped test holdout, then approximately 20% of the remaining data for validation (approximately 64% train, 16% validation, 20% test).",
+  "grouping_method": "SHA-256 of the JSON-serialized negation-aware clean_tokens(text) sequence (retaining not, no, never, and without); identical cleaned-token sequences stay in one split.",
+  "random_seed": 42,
+  "split_seeds": {
+    "test": 42,
+    "validation": 43
+  },
+  "rows_used": 5728,
+  "train_rows": 3665,
+  "validation_rows": 917,
+  "test_rows": 1146,
+  "unique_groups": {
+    "total": 5511,
+    "train": 3527,
+    "validation": 882,
+    "test": 1102
+  },
+  "class_distribution": {
+    "not_spam": 4360,
+    "spam": 1368
+  },
+  "split_class_distribution": {
+    "train": {
+      "not_spam": 2790,
+      "spam": 875
+    },
+    "validation": {
+      "not_spam": 698,
+      "spam": 219
+    },
+    "test": {
+      "not_spam": 872,
+      "spam": 274
+    }
+  },
+  "selection_metric": "validation_f1_spam",
+  "model_selection_metric": "validation_f1_spam",
+  "final_test_metrics": {
+    "evaluation_split": "grouped_independent_test",
+    "accuracy": 0.9956369982547993,
+    "precision_spam": 0.9890909090909091,
+    "recall_spam": 0.9927007299270073,
+    "f1_spam": 0.9908925318761385,
+    "roc_auc": 0.9996316882073261,
+    "average_precision": 0.9987356169314686,
+    "confusion_matrix": [
+      [
+        869,
+        3
+      ],
+      [
+        2,
+        272
+      ]
+    ],
+    "classification_report": {
+      "Not Spam": {
+        "precision": 0.9977037887485649,
+        "recall": 0.9965596330275229,
+        "f1-score": 0.9971313826735514,
+        "support": 872.0
+      },
+      "Spam": {
+        "precision": 0.9890909090909091,
+        "recall": 0.9927007299270073,
+        "f1-score": 0.9908925318761385,
+        "support": 274.0
+      },
+      "accuracy": 0.9956369982547993,
+      "macro avg": {
+        "precision": 0.993397348919737,
+        "recall": 0.9946301814772651,
+        "f1-score": 0.9940119572748449,
+        "support": 1146.0
+      },
+      "weighted avg": {
+        "precision": 0.9956445138565948,
+        "recall": 0.9956369982547993,
+        "f1-score": 0.9956397202664912,
+        "support": 1146.0
+      }
+    }
+  },
+  "model_file": "spam_detection_model.joblib"
+}

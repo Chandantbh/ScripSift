@@ -1,0 +1,246 @@
+{
+  "Naive Bayes CountVectorizer": {
+    "evaluation_split": "validation",
+    "accuracy": 0.9956379498364231,
+    "precision_spam": 0.9908675799086758,
+    "recall_spam": 0.9908675799086758,
+    "f1_spam": 0.9908675799086758,
+    "roc_auc": 0.9989271368947155,
+    "average_precision": 0.9934639390204346,
+    "confusion_matrix": [
+      [
+        696,
+        2
+      ],
+      [
+        2,
+        217
+      ]
+    ],
+    "classification_report": {
+      "Not Spam": {
+        "precision": 0.997134670487106,
+        "recall": 0.997134670487106,
+        "f1-score": 0.997134670487106,
+        "support": 698.0
+      },
+      "Spam": {
+        "precision": 0.9908675799086758,
+        "recall": 0.9908675799086758,
+        "f1-score": 0.9908675799086758,
+        "support": 219.0
+      },
+      "accuracy": 0.9956379498364231,
+      "macro avg": {
+        "precision": 0.9940011251978909,
+        "recall": 0.9940011251978909,
+        "f1-score": 0.9940011251978909,
+        "support": 917.0
+      },
+      "weighted avg": {
+        "precision": 0.9956379498364231,
+        "recall": 0.9956379498364231,
+        "f1-score": 0.9956379498364231,
+        "support": 917.0
+      }
+    },
+    "final_test": {
+      "evaluation_split": "grouped_independent_test",
+      "accuracy": 0.9956369982547993,
+      "precision_spam": 0.9890909090909091,
+      "recall_spam": 0.9927007299270073,
+      "f1_spam": 0.9908925318761385,
+      "roc_auc": 0.9996316882073261,
+      "average_precision": 0.9987356169314686,
+      "confusion_matrix": [
+        [
+          869,
+          3
+        ],
+        [
+          2,
+          272
+        ]
+      ],
+      "classification_report": {
+        "Not Spam": {
+          "precision": 0.9977037887485649,
+          "recall": 0.9965596330275229,
+          "f1-score": 0.9971313826735514,
+          "support": 872.0
+        },
+        "Spam": {
+          "precision": 0.9890909090909091,
+          "recall": 0.9927007299270073,
+          "f1-score": 0.9908925318761385,
+          "support": 274.0
+        },
+        "accuracy": 0.9956369982547993,
+        "macro avg": {
+          "precision": 0.993397348919737,
+          "recall": 0.9946301814772651,
+          "f1-score": 0.9940119572748449,
+          "support": 1146.0
+        },
+        "weighted avg": {
+          "precision": 0.9956445138565948,
+          "recall": 0.9956369982547993,
+          "f1-score": 0.9956397202664912,
+          "support": 1146.0
+        }
+      }
+    },
+    "evaluation_metadata": {
+      "split_strategy": "Two-stage StratifiedGroupKFold: approximately 20% grouped test holdout, then approximately 20% of the remaining data for validation (approximately 64% train, 16% validation, 20% test).",
+      "grouping_method": "SHA-256 of the JSON-serialized negation-aware clean_tokens(text) sequence (retaining not, no, never, and without); identical cleaned-token sequences stay in one split.",
+      "random_seed": 42,
+      "split_seeds": {
+        "test": 42,
+        "validation": 43
+      },
+      "train_rows": 3665,
+      "validation_rows": 917,
+      "test_rows": 1146,
+      "unique_groups": {
+        "total": 5511,
+        "train": 3527,
+        "validation": 882,
+        "test": 1102
+      },
+      "model_selection_metric": "validation_f1_spam",
+      "selected_model": "Naive Bayes CountVectorizer"
+    }
+  },
+  "ComplementNB TF-IDF": {
+    "evaluation_split": "validation",
+    "accuracy": 0.9836423118865867,
+    "precision_spam": 0.9951456310679612,
+    "recall_spam": 0.9360730593607306,
+    "f1_spam": 0.9647058823529412,
+    "roc_auc": 0.9994504847509519,
+    "average_precision": 0.9982513212697507,
+    "confusion_matrix": [
+      [
+        697,
+        1
+      ],
+      [
+        14,
+        205
+      ]
+    ],
+    "classification_report": {
+      "Not Spam": {
+        "precision": 0.980309423347398,
+        "recall": 0.998567335243553,
+        "f1-score": 0.9893541518807665,
+        "support": 698.0
+      },
+      "Spam": {
+        "precision": 0.9951456310679612,
+        "recall": 0.9360730593607306,
+        "f1-score": 0.9647058823529412,
+        "support": 219.0
+      },
+      "accuracy": 0.9836423118865867,
+      "macro avg": {
+        "precision": 0.9877275272076795,
+        "recall": 0.9673201973021418,
+        "f1-score": 0.9770300171168538,
+        "support": 917.0
+      },
+      "weighted avg": {
+        "precision": 0.9838526398041084,
+        "recall": 0.9836423118865867,
+        "f1-score": 0.9834675967808824,
+        "support": 917.0
+      }
+    },
+    "evaluation_metadata": {
+      "split_strategy": "Two-stage StratifiedGroupKFold: approximately 20% grouped test holdout, then approximately 20% of the remaining data for validation (approximately 64% train, 16% validation, 20% test).",
+      "grouping_method": "SHA-256 of the JSON-serialized negation-aware clean_tokens(text) sequence (retaining not, no, never, and without); identical cleaned-token sequences stay in one split.",
+      "random_seed": 42,
+      "split_seeds": {
+        "test": 42,
+        "validation": 43
+      },
+      "train_rows": 3665,
+      "validation_rows": 917,
+      "test_rows": 1146,
+      "unique_groups": {
+        "total": 5511,
+        "train": 3527,
+        "validation": 882,
+        "test": 1102
+      },
+      "model_selection_metric": "validation_f1_spam",
+      "selected_model": "Naive Bayes CountVectorizer"
+    }
+  },
+  "Logistic Regression TF-IDF": {
+    "evaluation_split": "validation",
+    "accuracy": 0.9890948745910578,
+    "precision_spam": 0.960352422907489,
+    "recall_spam": 0.9954337899543378,
+    "f1_spam": 0.9775784753363229,
+    "roc_auc": 0.9995878635632139,
+    "average_precision": 0.9986337430247716,
+    "confusion_matrix": [
+      [
+        689,
+        9
+      ],
+      [
+        1,
+        218
+      ]
+    ],
+    "classification_report": {
+      "Not Spam": {
+        "precision": 0.9985507246376811,
+        "recall": 0.9871060171919771,
+        "f1-score": 0.9927953890489913,
+        "support": 698.0
+      },
+      "Spam": {
+        "precision": 0.960352422907489,
+        "recall": 0.9954337899543378,
+        "f1-score": 0.9775784753363229,
+        "support": 219.0
+      },
+      "accuracy": 0.9890948745910578,
+      "macro avg": {
+        "precision": 0.9794515737725851,
+        "recall": 0.9912699035731575,
+        "f1-score": 0.9851869321926572,
+        "support": 917.0
+      },
+      "weighted avg": {
+        "precision": 0.9894281204076789,
+        "recall": 0.9890948745910578,
+        "f1-score": 0.9891612515320073,
+        "support": 917.0
+      }
+    },
+    "evaluation_metadata": {
+      "split_strategy": "Two-stage StratifiedGroupKFold: approximately 20% grouped test holdout, then approximately 20% of the remaining data for validation (approximately 64% train, 16% validation, 20% test).",
+      "grouping_method": "SHA-256 of the JSON-serialized negation-aware clean_tokens(text) sequence (retaining not, no, never, and without); identical cleaned-token sequences stay in one split.",
+      "random_seed": 42,
+      "split_seeds": {
+        "test": 42,
+        "validation": 43
+      },
+      "train_rows": 3665,
+      "validation_rows": 917,
+      "test_rows": 1146,
+      "unique_groups": {
+        "total": 5511,
+        "train": 3527,
+        "validation": 882,
+        "test": 1102
+      },
+      "model_selection_metric": "validation_f1_spam",
+      "selected_model": "Naive Bayes CountVectorizer"
+    }
+  }
+}

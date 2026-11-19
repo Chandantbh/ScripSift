@@ -1,0 +1,8 @@
+.venv/
+backups/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.streamlit/secrets.toml
+app_backup.py
+*.ipynb
